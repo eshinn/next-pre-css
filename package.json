@@ -1,0 +1,10 @@
+{
+  "name": "next-pre-css",
+  "version": "1.0.0",
+  "description": "Adds support for Stylus & Less to NextJS.",
+  "main": "index.js",
+  "repository": "git@github.com:eshinn/next-pre-css.git",
+  "author": "Eric Shinn <eric.shinn@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
