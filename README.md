@@ -9,6 +9,13 @@ Install both Stylus and the Stylus loader for Webpack:
 $ npm i -D stylus stylus-loader next-pre-css
 ```
 
+__NOTE:__ Stylus-Loader v5 drops support for Webpack 4 (which is the default for NextJS v10)
+You can opt-in to Webpack5 as noted both on [this page](https://nextjs.org/docs/messages/webpack5) as well as the example illustrated below.
+If, however, you wish to stay on Webpack 4 - then you'll need Stylus-Loader v4:
+```
+$ npm i -D stylus-loader^4.3.3
+```
+
 ### for Less?
 Install both Less and the Less loader for Webpack:
 ```
@@ -25,6 +32,10 @@ In the config, `require()` the next-pre-css module and wrap your config with it 
 const addSupport = require('next-pre-css')
 
 module.exports = addSupport({
+
+  /* To opt-in to using Webpack5 in NextJS */
+  future: { webpack5: true },
+	 
   webpack: (config, options) => {
 	
     /* ...and the rest of your custom webpack config goes here. */
