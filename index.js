@@ -27,6 +27,7 @@ const ammendOneOfRules = config => (a, c) => {
 		&& c.test.source
 
 	const matchesRegExpIssuer = 'issuer' in c
+		&& typeof c.issuer !== 'undefined'
 		&& c.issuer instanceof RegExp
 		&& c.issuer.source
 
@@ -43,12 +44,14 @@ const ammendOneOfRules = config => (a, c) => {
 		|| (() => false))
 
 	const issuerAccepts = ('issuer' in c
+		&& typeof c.issuer !== 'undefined'
 		&& 'and' in c.issuer
 		&& Array.isArray(c.issuer.and)
 		&& matchArray(c.issuer.and)
 		|| (() => false))
 
 	const issuerAvoids = ('issuer' in c
+		&& typeof c.issuer !== 'undefined'
 		&& 'not' in c.issuer
 		&& Array.isArray(c.issuer.not)
 		&& matchArray(c.issuer.not)
